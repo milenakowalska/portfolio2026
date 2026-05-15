@@ -31,7 +31,17 @@
   <link rel="android-chrome" sizes="192x192" href="./android-chrome-192x192.png">
   <link rel="android-chrome" sizes="512x512" href="./android-chrome-512x512.png">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap" rel="stylesheet">
+
   <style>
+    .ms-madi-regular {
+      font-family: "Ms Madi", cursive;
+      font-weight: 400;
+      font-style: normal;
+    }
+
     :root {
       --background: #f8efd4;
       --text: #4f3d16;
@@ -58,7 +68,7 @@
 
     main {
       flex: 1;
-      width: min(100% - 2rem, 760px);
+      width: min(100% - 2rem, 660px);
       margin: 0 auto;
       padding: 1rem 0;
       text-align: center;
@@ -68,7 +78,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
 
     .logo {
@@ -82,7 +92,7 @@
 
     h1 {
       margin-bottom: 1rem;
-      font-size: clamp(2rem, 6vw, 4rem);
+      font-size: clamp(3rem, 16vw, 5rem);
       line-height: 1.1;
       color: var(--accent);
       letter-spacing: -0.04em;
@@ -122,8 +132,9 @@
     }
 
     .read-more {
+      font-size: 0.8rem;
       display: inline-block;
-      margin-top: 1rem;
+      margin-bottom: 1rem;
       color: var(--accent);
       font-weight: 700;
       text-decoration: none;
@@ -168,6 +179,10 @@
       outline-offset: 4px;
       border-radius: 4px;
     }
+
+    h3 {
+      margin: 0;
+    }
   </style>
 </head>
 
@@ -176,7 +191,7 @@
     <section class="hero" aria-label="Introduction">
       <img class="logo" src="./logo.svg" alt="Milena Kowalska logo" />
 
-      <h1>Milena Kowalska</h1>
+      <h1 class="ms-madi-regular">Milena Kowalska</h1>
 
       <p class="tagline">
         Full-stack developer exploring AI systems.
@@ -186,9 +201,9 @@
     <section class="section" aria-labelledby="about-title">
       <h2 id="about-title">About me</h2>
       <p>
-        I build software, ask too many questions, and like turning messy ideas into small things that actually work.
-        Lately, I’m especially curious about LLM engineering, AI-powered products, and thoughtful system design.
-      </p>
+      I’m a full-stack developer driven by growth, exploration, and the challenge of stretching my technical thinking.
+      Lately, I’m especially curious about LLM engineering, AI-powered products, and thoughtful system design.
+    </p>
     </section>
 
     <section class="section" aria-labelledby="work-title">
@@ -207,7 +222,7 @@
       <h2 id="work-title">Other projects</h2>
       <h3>The New Hires</h3>
       <p>
-        Hackathon project 
+        Hackathon project: an innovative web application that simulates a compressed team onboarding experience, allowing new employees to experience a full 30-day onboarding cycle in just 7 days.
       </p>
 
       <a class="read-more" href="https://github.com/UtsahaJoshi/The-New-Hires/">
@@ -216,7 +231,7 @@
 
       <h3>Mail2Knowledge</h3>
       <p>
-        Hackathon project implementing RAG pipeline with Python and LangChain
+        Hackathon project that turns messy internal emails into a searchable knowledge layer. It includes RAG pipeline implementation with Python and LangChain.
       </p>
 
       <a class="read-more" href="https://github.com/milenakowalska/Mail2Knowledge">
