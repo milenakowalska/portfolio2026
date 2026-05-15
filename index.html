@@ -3,35 +3,144 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Milena Kowalska — full-stack developer exploring AI systems, LLM engineering and thoughtful software."
+  />
+
   <title>Milena Kowalska</title>
   <link rel="icon" type="image/png" href="./favicon.png" />
 
   <style>
+    :root {
+      --background: #f8efd4;
+      --text: #4f3d16;
+      --accent: #c49a2c;
+      --muted: #7b6a48;
+      --border: rgba(79, 61, 22, 0.16);
+      --card: rgba(255, 255, 255, 0.32);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: start;
+      background: var(--background);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    main {
+      flex: 1;
+      width: min(100% - 2rem, 760px);
+      margin: 0 auto;
+      padding: 1rem 0 1rem;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      background-color: #f8efd4f4;
-      font-family: Arial, sans-serif;
-      color: #5b4400f4;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .logo {
+      height: 10rem;
     }
 
     h1 {
-      margin-top: 0;
-      font-size: 4rem;
-      color: #d5a000f4;
-      text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.708);
-      text-align: center;
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 4rem);
+      line-height: 1.1;
+      color: var(--accent);
+      letter-spacing: -0.04em;
+    }
+
+    .tagline {
+      margin: 1rem 0 0;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--muted);
+    }
+
+    .about {
+      margin-top: 2rem;
+      max-width: 580px;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 1.5rem;
+      background: var(--card);
+      backdrop-filter: blur(8px);
+    }
+
+    .about p {
+      margin: 0;
+    }
+
+    footer {
+      width: min(100% - 2rem, 760px);
+      margin: 0 auto;
+      padding: 1.5rem 0 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 0.25em;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+      border-radius: 4px;
     }
   </style>
 </head>
 
 <body>
-  <img src="./logo.svg" alt="Milena Kowalska logo" width="260" />
-  <h1>Milena Kowalska</h1>
-  <p>Full-stack developer exploring AI systems.</p>
+  <main>
+    <img class="logo" src="./logo.svg" alt="Milena Kowalska logo" />
+
+    <h1>Milena Kowalska</h1>
+
+    <p class="tagline">
+      Full-stack developer exploring AI systems.
+    </p>
+
+    <section class="about" aria-labelledby="about-title">
+      <h2 id="about-title">About me</h2>
+      <p>
+        I build software, ask too many questions, and like turning messy ideas into small things that actually work.
+        Lately, I’m especially curious about LLM engineering, AI-powered products and thoughtful system design.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <nav class="links" aria-label="Social links">
+      <a href="https://www.linkedin.com/in/milena-kowalska-7b30471b1/">LinkedIn</a>
+      <a href="https://github.com/milenakowalska">GitHub</a>
+      <a href="mailto:milenakowalska126@gmail.com">Email</a>
+    </nav>
+  </footer>
 </body>
 </html>
