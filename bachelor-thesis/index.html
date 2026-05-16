@@ -5,11 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="Milena Kowalska — full-stack developer exploring AI systems, LLM engineering and thoughtful software."
+    content="Milena Kowalska — full-stack developer exploring AI systems."
   />
 
   <title>Milena Kowalska</title>
-  <link rel="icon" type="image/png" href="./favicon.png" />
+  <meta
+      property="og:image"
+    content="https://milenakow.com/preview.png"
+  />
+
+  <meta property="og:url" content="https://milenakow.com" />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="android-chrome" sizes="192x192" href="../android-chrome-192x192.png">
+  <link rel="android-chrome" sizes="512x512" href="../android-chrome-512x512.png">
+
 
   <style>
     :root {
@@ -38,15 +54,19 @@
 
     main {
       flex: 1;
-      width: min(100% - 2rem, 760px);
+      width: min(100% - 2rem, 660px);
       margin: 0 auto;
       padding: 1rem 0;
-      text-align: center;
+      text-align: justify
     }
 
 
     h1, h2, p {
       margin-top: 0;
+    }
+
+    h1 {
+      font-size: 1.5rem;
     }
 
 
@@ -105,8 +125,14 @@
       <a class="back" href="/">
         Back
       </a>
-      <p>
-        My bachelor thesis TODO
+      <h1>Detecting Alzheimer’s Disease from EEG Signals using Machine Learning</h1>
+      <p>For my bachelor thesis, I wanted to choose a topic that genuinely fascinated me. I wanted to combine my curiosity about machine learning and how models work “under the hood” with my long-standing interest in psychology and neuropsychology. When I discovered the dataset “A dataset of EEG recordings from Alzheimer’s disease, frontotemporal dementia and healthy subjects”, I immediately knew this was the right direction for me. The goal of the thesis was to explore how machine learning models can be optimized for the detection of Alzheimer’s disease based on EEG recordings. To answer this question, I combined literature research with hands-on experimentation and built my own machine learning pipeline using Python. I started by exploring the structure of the EEG data using the MNE library, which is widely used for processing neurophysiological signals. At the same time, I spent a lot of time reading research papers about Alzheimer’s disease itself, trying to understand what exactly happens in the brain during the progression of the disease. One observation that appeared repeatedly in the literature was that Alzheimer’s particularly affects specific regions of the brain. Based on this, I decided to focus primarily on electrodes located at the back of the head. One of the biggest challenges of this project was the dimensionality of the data. EEG recordings are inherently complex — for each patient, there are multiple electrodes recording signal values over time, creating highly multidimensional data structures. As this was my first larger research-oriented machine learning project, I spent a lot of time experimenting, reading about time-series analysis, and trying to understand which approaches made sense and which did not. At one point, I tried flattening the EEG data into a large two-dimensional dataset to make it compatible with models such as Random Forests and Support Vector Machines. Initially, the results looked almost too good to be true. And eventually, I realized that they were. The issue was subtle but very important: data from neighboring electrodes of the same patient often looked very similar. This meant that if one electrode from a patient ended up in the training set while another electrode from the same patient ended up in the test set, the model could effectively “recognize” the patient instead of learning meaningful disease-related patterns. The model achieved extremely high accuracy, but for the wrong reason. Realizing this was frustrating at first, but it also became one of the most valuable lessons of the entire project: good machine learning is not only about achieving high metrics, but about understanding what the model is actually learning. After discovering this issue, I focused much more heavily on feature engineering and dimensionality reduction. Instead of feeding raw EEG signals directly into the model, I experimented with signal processing techniques such as peak detection and frequency filtering. I eventually found that focusing on the extended alpha frequency range produced the best results. The final model, based on the Random Forest algorithm and engineered EEG features, achieved an accuracy of 83.33%, which was very competitive compared to state-of-the-art results reported in the literature at that time. The key optimization steps included:
+
+* focusing on peaks in the power spectrum of the extended alpha range,
+* selecting electrodes located at the back of the head,
+* and weighting observations based on disease progression.
+
+Even though this was my first deeper experience with machine learning research, signal processing, and EEG analysis, I genuinely enjoyed the process. The project taught me not only technical skills, but also how important critical thinking and careful validation are when working with machine learning models, especially in the medical domain. Finally, I would like to express my sincere gratitude to my supervisor for her enormous support throughout this project. Her guidance, patience, and encouragement helped me enormously during both the technical and research parts of the thesis. I truly appreciated having someone who continuously motivated me to think deeper and push the project further.
       </p>
 
   </main>
