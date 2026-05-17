@@ -1,0 +1,29 @@
+/* ===== Bachelor Thesis Page Specific Styles ===== */
+
+main {
+  text-align: justify;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.back:hover,
+.back:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
